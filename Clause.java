@@ -1,4 +1,3 @@
-
 /*****************************************************
 CS 4365.001
 Colleen Cousins
@@ -59,13 +58,14 @@ public class Clause {
                     removeList.add(p2entry);
            } //end else
        } //end for
+
        List<String> temp = new ArrayList<>(Arrays.asList(parent1.sentence));
        temp.addAll(p2List);
-       temp.removeAll(removeList);
+       temp.removeAll(removeList); //remove contradicting literals
 
-       Set<String> duplicates = new LinkedHashSet<>(temp);
+       Set<String> duplicates = new LinkedHashSet<>(temp); //put list in set to remove any duplicate literals
        temp.clear();
-       temp.addAll(duplicates);
+       temp.addAll(duplicates); //put literals back in list
 
        if(temp.size() == 0) {//empty List   
             this.sentence = new String[1];

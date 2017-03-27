@@ -1,8 +1,12 @@
+/*****************************************************
+CS 4365.001
+Colleen Cousins
+Matthew Villarreal
+******************************************************/
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-
 import java.io.*;
 
 public class Resolution {
@@ -102,10 +106,6 @@ public class Resolution {
 
 	 public static int clauseComp(Clause check, Clause prove) {
     	
-    	// Remove tilde
-		String []noTilde1 = Arrays.copyOf(removeTilde(check.getSen()), check.getSen().length);
-	    String []noTilde2 = Arrays.copyOf(removeTilde(prove.getSen()), prove.getSen().length);
-    	
     	for(int i = 0; i < prove.getSen().length; i++) {
 			String pSen = prove.getSen()[i];
 
@@ -133,11 +133,6 @@ public class Resolution {
     
 	 public static String clauseCompStr(Clause check, Clause prove) {
 	    	
-	    	// Remove tilde
-	    	String []noTilde1 = Arrays.copyOf(removeTilde(check.getSen()), check.getSen().length);
-	    	String []noTilde2 = Arrays.copyOf(removeTilde(prove.getSen()), prove.getSen().length);
-	    	
-	    	
 	    	for(int i = 0; i < prove.getSen().length; i++) {
 				String pSen = prove.getSen()[i];
 
@@ -162,17 +157,5 @@ public class Resolution {
 			} //end for
     	return null;
 	    } // end clauseComp
-	 
-    public static String[] removeTilde(String[] s){
-    	String[] newString = (String[])s.clone();
-    	for(int j = 0; j < newString.length; j++){
-			
-			// Remove ~
-    		if(newString[j].contains("~")){
-    			newString[j] = newString[j].substring(1, newString[j].length());
-    		} // end if
-		} // end for
-    	return newString;
-    } // end removeTilde
 
 } //end Resolution
