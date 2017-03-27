@@ -104,7 +104,7 @@ public class Clause {
     } //end setSen
     public void setUsed(boolean used) {
     	this.used = used;
-    }
+    } //end setUsed
     
  // ************************** METHODS *****************************************
     public void printClause() {

@@ -12,18 +12,17 @@ import java.io.*;
 public class Resolution {
 
     public static void main(String args[]) {
-
-        
+      
     	Scanner scan = null;
     	
     	File infile = new File(args[0]);
     	
     	List<Clause> cList = new ArrayList<Clause>();
     	int counter = 1;
-    	try{
+    	try {
     		scan = new Scanner(infile);
     		
-    		while(scan.hasNextLine()){
+    		while(scan.hasNextLine()) {
     			
     			String tempString = scan.nextLine();
     			String []split = tempString.split("\\s+");
@@ -63,9 +62,9 @@ public class Resolution {
 				if(currentMin < minClauseSize && currentMin != -1) {
 					minClauseSize = currentMin;
 					minClauseIndex = i;
-				} //end if
-				
+				} //end if			
     		} //end for
+
     		//System.out.print("Passed: ");
     		//cList.get(minClauseIndex).printClause();
     		if(minClauseSize == 999999) {
@@ -89,13 +88,13 @@ public class Resolution {
 			}
 			System.out.println("");*/
 		} //end while
-		
-		
+				
 		for(int i = 0; i < cList.size(); i++) {
 			Clause test = cList.get(i);
 			if(test.getUsed())
 				test.printClause();
-		}
+		} //end for
+		
 		System.out.println("Size of final clause set: " + cList.size());
 		
 		/*for(int i = 0; i < cList.size(); i++){
